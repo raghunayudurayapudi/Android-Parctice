@@ -1,0 +1,371 @@
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
+import org.w3c.dom.Text;
+
+public class MainActivity extends AppCompatActivity {
+ EditText input;
+  TextView result;
+  TextView console;
+    double inputval=0;
+    double OutputVal=0;
+    private static final String TAG = "MyActivity";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+            result=(TextView)findViewById(R.id.textView3);
+            console=(TextView)findViewById(R.id.textView5);
+            input=(EditText)findViewById(R.id.editText2);
+    }
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radioButton7:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*1;
+                console.setText("Input has been Entered");
+                    break;
+            case R.id.radioButton15:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*72913.4;
+
+                break;
+            case R.id.radioButton6:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*12;
+                    break;
+            case R.id.radioButton5:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*36;
+                break;
+            case R.id.radioButton4:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*63360;
+                break;
+            case R.id.radioButton3:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*0.393701;
+                break;
+            case R.id.radioButton2:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*39.3701;
+                break;
+            case R.id.radioButton:
+                if (checked)
+                    inputval=Float.parseFloat(input.getText().toString());
+                inputval=inputval*39370.1;
+                break;
+        }
+    }
+    public void onRadioButtonClicked1(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radioButton14:
+                if (checked)
+                    OutputVal= inputval;
+                result.setText(Double.toString(OutputVal));
+                Log.d("output",result.getText().toString());
+                console.setText("output has been Released");
+                break;
+            case R.id.radioButton16:
+                if (checked)
+                    OutputVal= inputval/72913.4;
+                result.setText(Double.toString(OutputVal));
+                console.setText("output has been Released"+inputval);
+                break;
+            case R.id.radioButton13:
+                if (checked)
+                    OutputVal= inputval/12;
+                result.setText(Double.toString(OutputVal));
+                console.setText("output has been Released");
+                break;
+            case R.id.radioButton12:
+                if (checked)
+                    OutputVal= inputval/36;
+                result.setText(Double.toString(OutputVal));
+                console.setText("output has been Released");
+                break;
+            case R.id.radioButton11:
+                if (checked)
+                    OutputVal= inputval/63360;
+                result.setText(Double.toString(OutputVal));
+                console.setText("output has been Released");
+                break;
+            case R.id.radioButton10:
+                if (checked)
+                    OutputVal= inputval/0.393701;
+                result.setText(Double.toString(OutputVal));
+                console.setText("output has been Released");
+                break;
+            case R.id.radioButton9:
+                if (checked)
+                    OutputVal= inputval/39.3701;
+                result.setText(Double.toString(OutputVal));
+                console.setText("output has been Released");
+                break;
+            case R.id.radioButton8:
+                if (checked)
+                    OutputVal= inputval/39370.1;
+                result.setText(Double.toString(OutputVal));
+                console.setText("output has been Released");
+                break;
+        }
+    }
+
+}
+
+XmlFile
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.swaro.assignment2.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Raghu Nayudu Rayapdui" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ouput" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Distance Convertor"
+        android:textSize="15dp"
+        android:padding="5dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Input Value" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Output Value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textPersonName"
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp">
+
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inch"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Foot"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yard"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="mile"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Centimeter"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="meter"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kilometer"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/radioButton15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nautical Mile"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:onClick="onRadioButtonClicked1"
+            >
+
+            <RadioButton
+                android:id="@+id/radioButton14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inch"
+                android:onClick="onRadioButtonClicked1"
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Foot"
+                android:onClick="onRadioButtonClicked1"
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClicked1"
+                android:text="Yard" />
+
+            <RadioButton
+                android:id="@+id/radioButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mile"
+                android:onClick="onRadioButtonClicked1"
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Centimeter"
+                android:onClick="onRadioButtonClicked1"
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meter"
+                android:onClick="onRadioButtonClicked1"
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kilometer"
+                android:onClick="onRadioButtonClicked1"
+                />
+            <RadioButton
+                android:id="@+id/radioButton16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nautical miles"
+                android:onClick="onRadioButtonClicked1"
+                />
+        </RadioGroup>
+    </LinearLayout>
+
+</LinearLayout>
